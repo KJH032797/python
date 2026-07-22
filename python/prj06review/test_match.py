@@ -1,0 +1,1 @@
+birth_num=(input("enter the birth number : ").split(1)
