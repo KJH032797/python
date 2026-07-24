@@ -1,13 +1,12 @@
-# 문제 맞춘 횟수
-score = 0
-
 # 등급
 def grade(score):
     if score == 3:
-        print("Your grade is A")
+        print(f"총 성적은 A입니다.")
     elif score == 2:
-        print("Your grade is B")
+        print(f"총 성적은 B입니다.")
     elif score == 1:
-        print("Your grade is C")
+        print(f"총 성적은 C입니다.")
     else:
-        print("Your grade is F")
+        print(f"총 성적은 F입니다.")
+
+

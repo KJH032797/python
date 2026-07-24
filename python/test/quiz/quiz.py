@@ -13,7 +13,7 @@ Quiz_list = [Q1, Q2, Q3, Q4, Q5]
 
 A1 = "cd .."
 A2 = "mv"
-A3 = "q!"
+A3 = ":q!"
 A4 = "whoami"
 A5 = "-a" or "a"
 
