@@ -19,5 +19,5 @@ A5 = "-a" or "a"
 
 Answer_dict = {Q1:A1, Q2:A2, Q3:A3, Q4:A4, Q5:A5}
 
-# 5문제 중 랜덤으로 3문제 출시
+# 5문제 중 랜덤으로 3문제 출제
 Quiz = random.sample(Quiz_list, 3)
