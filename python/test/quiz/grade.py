@@ -1,4 +1,4 @@
-# 등급
+# 등급 출력
 def grade(score):
     if score == 3:
         print(f"총 성적은 A입니다.")
