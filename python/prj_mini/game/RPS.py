@@ -3,7 +3,7 @@ import random
 # rules
 
 # 시작 안내문
-start = '''
+RPS_start = '''
 ==========가위바위보 게임을 시작합니다.===========
 승리시 +1점, 무승부시 0점, 패배 혹은 자체 종료시 -1점이 되며 총 5점이 되거나 3연승시에 최종 승리합니다.
 가위, 바위, 보 중에 하나를 입력하세요. 종료를 원하시면 \"종료\"를 입력하세요.
@@ -31,7 +31,7 @@ def RPS() :
     user_win = 0 # 사용자 연승 횟수
     com_cnt = 0 # 컴퓨터 점수
     com_win = 0 # 컴퓨터 연승 횟수
-    print(start)
+    print(RPS_start)
     while True:
         print("\n가위, 바위, 보!")
         user_shot = input("user : ").strip()
@@ -73,7 +73,8 @@ def RPS() :
                 return 1
 
             if user_win == 3 :
-                print("\n최종 승리하셨습니다. 축하합니다!\n")
+                print("\n최종 승리하셨습니다. 축하합니다!")
+                print("추가 포인트를 획득합니다.\n")
                 return 3
 
         elif result == "lose" : # 컴퓨터 승리
