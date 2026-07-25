@@ -1,3 +1,5 @@
+# 업다운
+
 import random
 
 # 시작 안내문
@@ -10,40 +12,45 @@ UD_start = '''
 '''
 
 
-# 업다운게임 함수
-def UD() :
+# 게임 함수
+def UpDown() :
     answer = random.randint(1, 100) # 정답
     cnt = 6 # 기회
     print(UD_start)
-    while True :
+    while cnt > 0 :
         print(f"{cnt}회 남았습니다.") # 남은 기회 수 안내
         try:
             n = int(input("숫자를 입력하세요. : ")) # 정답 입력
-        except ValueError:
-            print("숫자만 입력해주세요\n") # 예외 처리
+        except ValueError: # 예외 처리
+            print("숫자만 입력해주세요\n")
             continue
 
         if n == 0 : # 종료 처리
             print("게임을 종료합니다.")
             return -1
 
+        if not (1<=n<=100) : # 범위 설정
+            print("1부터 100 사이의 숫자만 입력해주세요")
+            continue
+
         cnt -= 1 # 기회 차감
+
         # 정답 판별
+        if answer == n :
+            print(f"\n🎉 정답입니다!")
+            if cnt > 0 :
+                print("🔥 기회를 모두 소진하지 않고 맞추셨습니다! 보너스 포인트를 획득합니다!")
+                return 3
+            else :
+                print("👍 마지막 기회에 맞추셨습니다!")
+                return 1
+
         if answer > n:
             print("업!")
 
         elif answer < n:
             print("다운!")
 
-        if answer == n and cnt > 0 :
-            print("정답!")
-            print("기회를 모두 소진하지 않고 맞췄습니다! 추가 포인트를 획득합니다.")
-            return 3
-        if answer == n and cnt == 0 :
-            print("정답!")
-            print("포인트를 획득하고 게임을 종료합니다.")
-            return 1
-
-        elif answer != n and cnt == 0 : # 기회 소진
-            print("기회가 모두 소진되었습니다. 수고하셨습니다.")
-            return -1
+    print(f"기회가 모두 소진되었습니다. 정답은 {answer}였습니다.")
+    print("게임을 종료합니다.")
+    return -1
