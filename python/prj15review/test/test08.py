@@ -12,15 +12,15 @@ for i in range(student) :
         arr.append(0)
     table.append(arr)
 
-table[0][0] = 40
-table[0][1] = 90
-table[0][2] = 80
-table[1][0] = 10
-table[1][1] = 20
-table[1][2] = 30
-table[2][0] = 70
-table[2][1] = 60
-table[2][2] = 50
+# table[0][0] = 40
+# table[0][1] = 90
+# table[0][2] = 80
+# table[1][0] = 10
+# table[1][1] = 20
+# table[1][2] = 30
+# table[2][0] = 70
+# table[2][1] = 60
+# table[2][2] = 50
 
 total_list=[]
 
