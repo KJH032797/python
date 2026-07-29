@@ -1,30 +1,24 @@
-Num = input().split()
-a = int(Num[0])
-b = int(Num[1])
+# 구구단
+# n * 1  =
 
-sum=0
+# x = int(input("enter any number: "))
+# y = int(input("enter any number: "))
+# z = int(input("enter any number: "))
+#
+# for i in range(1,10):
+#     print(f"{x} * {i} = {x * i}")
+#     print(f"{y} * {i} = {y * i}")
+#     print(f"{z} * {i} = {z * i}")
 
-# a부터 b까지 계산, 홀수/짝수 구분, 조건에 따라 계산
-while a <= b:
-    sum = sum + a
-    if a % 2 == 0:
-        print(f"{a} + {sum} = {a+sum}")
-        a += 1
-    elif a % 2 != 0:
-        sum = sum - a
-        print(f"{-a} - {sum} = {-a-sum}")
-    a = a+1
+# for dan in range(2, 10):
+#     for i in range(1, 10):
+#         print(f"{dan} * {i} = {dan * i}")
 
+# 시간 출력
 
+# for min in range(60):
+#     print(f"11 : {min}")
 
-
-# if a%2==0:
-#     if b%2==0 :
-#         print(a+b)
-#     else:
-#         print(a-b)
-# else :
-#      if b%2==0:
-#             print(-a+b)
-#      else:
-#          print(-a - b)
+# for time in range(24):
+#     for min in range(60):
+#         print(f"{time} : {min}")

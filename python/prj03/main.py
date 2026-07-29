@@ -18,10 +18,12 @@ from operator import and_
 # print(10!=3)
 
 #논리 : not, and, or 순으로 적용, () 먼저 적용됨
-# print(not True and False)
-# print(not False and True)
-# print(not True and False or False)
-# print(not True and False or True)
+print(not True and False)
+print(not False and True)
+print(not True and False or False)
+print(not True and False or True)
+print(not True or False and False)
+print(not True or True and False)
 # print(True or False)
 
 #리스트
