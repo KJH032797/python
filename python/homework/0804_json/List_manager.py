@@ -88,7 +88,7 @@ def add_work():
 def show_list_and_manage():
     # 목록 보기
     if not ToDo_list:
-        print("\n할 일이 없습니다. 뭐하지...\n")
+        print("\n할 일이 없습니다. 뭐하지...")
         return
 
     print("\n----- To Do List -----\n")
