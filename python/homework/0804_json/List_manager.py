@@ -1,7 +1,32 @@
+import json
 from model.ToDo import ToDo
 
 ToDo_list = []
 
+# json ===========================================================
+
+def save_list(): # 기존 ToDo에서 입력된 데이터를 json에 저장
+    dict_list = []
+    for td in ToDo_list:
+        dict_list.append(td.to_dict())
+
+    with open("book_data.json", "w", encoding="utf-8") as f:
+        json.dump(dict_list, f, ensure_ascii=False, indent=2)
+
+def load_list(): # json에 저장된 데이터를 ToDo_list에 다시 불러와 활용
+    try:
+        with open("book_data.json", "r", encoding="utf-8") as f:
+            dict_list = json.load(f)
+            ToDo_list.clear()
+            for dict_data in dict_list:
+                ToDo_list.append(ToDo.from_dict(dict_data))
+    except Exception as e:
+        print(type(e))
+        print(e)
+        pass
+
+
+# 기존 Todo 기능 구현 ==============================================
 
 def print_menu():  # 목록 출력
     print(
@@ -54,6 +79,8 @@ def add_work():
     td = ToDo(name=n, content=c, priority=p)
     ToDo_list.append(td)
     ToDo_list.sort(key=get_priority) # 우선 순위 정렬
+
+    save_list() # 입력된 데이터를 저장
     print("등 록 완 료 !\n")
 
 
@@ -159,6 +186,8 @@ def toggle_done(target):
         status_str = "완료"
     else:
         status_str = "미완료"
+
+    save_list()
     print(f"상태가 [{status_str}](으)로 변경되었습니다 !\n")
 
 
@@ -183,10 +212,12 @@ def edit(target):
     match num:
         case 1:
             target.name = input("이름 편집 : ").strip()
+            save_list()
             print("수 정 완 료 !\n")
 
         case 2:
             target.content = input("내용 편집 : ").strip()
+            save_list()
             print("수 정 완 료 !\n")
 
         case 3:
@@ -194,6 +225,7 @@ def edit(target):
                 try:
                     target.priority = int(input("우선 순위 편집 : "))
                     ToDo_list.sort(key=get_priority)
+                    save_list()
                     print("수 정 완 료 !\n")
                     break
                 except Exception as e:
@@ -209,6 +241,7 @@ def delete_item(num):
         delete = input("\n이 항목을 삭제하시겠습니까? (Y/N)").strip().upper()
         if delete == "Y":
             del ToDo_list[num]
+            save_list()
             print("삭 제 완 료 !\n")
             break
         elif delete == "N":

@@ -13,7 +13,7 @@ class ToDo:
             status = "[ ]"
         return f"{status} | {self.name}\n{self.content}\n"
 
-    def to_dict(self):
+    def to_dict(self): # 입력된 데이터를 json에 저장하기 위해 변환
         return {
             "name": self.name,
             "content": self.content,
@@ -22,7 +22,11 @@ class ToDo:
         }
 
     @staticmethod
-    def from_dict(dict_data):
-        todo = ToDo(dict_data["name"], dict_data["content"], dict_data["priority"])
-        todo.done = dict_data["done"]
+    def from_dict(dict_data): # json에 저장된 데이터를 불러와 사용하기 위해 다시 변환
+        todo = ToDo(
+            dict_data["name"],
+            dict_data["content"],
+            dict_data["priority"],
+            dict_data["done"]
+        )
         return todo

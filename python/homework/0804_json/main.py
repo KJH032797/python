@@ -1,6 +1,8 @@
-from List_manager import print_menu, scan_user_input, process
+from List_manager import print_menu, scan_user_input, process, load_list
 
 print("===== To-Do Manger =====")
+
+load_list() # json 저장 데이터도 불러오기
 
 while True:
     try :
